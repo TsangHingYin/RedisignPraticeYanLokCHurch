@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Yan Lok Church</title>
+		<link href="pages.css" rel="stylesheet" type="text/css"/>
+		<link href="home.css" rel="stylesheet" type="text/css"/>
+        <style>
+			.post {
+				margin: 40px;
+				line-height: 2;
+			}
+            .title {
+                font-size: 25px;
+                font-weight: bold;
+            }
+            .content {
+                font-size: 18px;
+            }
+        </style>
+    </head>
+    <body>
+    <div class="head-container">            
+        <div class="site-header">
+            <a href=".header"><img src="site_image.jpg"></a>
+        </div>
+		<div class="site-topnav">
+			<ul>
+			<li><a href=".home" onmouseover="afterPageLinkIsHovered(this)">首頁</a>
+			<li><a href=".about" onmouseover="afterPageLinkIsHovered(this)">關於教會</a><ul class="sublinks">
+				<li><a href=".description">恩樂堂簡介</a>
+				<li><a href=".ourflow">我們的源流</a>
+				<li><a href=".ourfaith">我們的信仰</a>
+			</ul></li>
+			
+			<li><a href=".worship" onmouseover="afterPageLinkIsHovered(this)">主日崇拜</a><ul class="sublinks">
+				<li><a href=".description">主日講道</a>	
+				<li><a href=".description">崇拜週刊</a>	
+			</ul></li>
+			<li><a href=".activities" onmouseover="afterPageLinkIsHovered(this)">活動花絮</a>
+			<li><a href=".sharing" onmouseover="afterPageLinkIsHovered(this)">分享</a><ul class="sublinks">
+				<li><a href=".description">見證分享</a>	
+				<li><a href=".description">文章分享</a>	
+				<li><a href=".description">書籍分享</a>	
+			</ul></li>
+			<li><a href=".contact" onmouseover="afterPageLinkIsHovered(this)">聯絡我們</a>
+		</ul>
+		</div>
+		
+		
+		<div class="menu-container" onclick="afterMenuIsClicked(this)">
+			<div class="bar1"></div>
+			<div class="bar2"></div>
+			<div class="bar3"></div>
+		</div>
+		
+		
+    </div>
+	
+    <div class="content-container">
+		<div class="slideshow-container">
+
+			<div class="mySlides fade">
+			  <img src="main_image.png" style="width:100%"> 
+			</div>
+
+			<div class="mySlides fade">
+			  <img src="group_photo.jpg" style="width:100%">
+			</div>
+
+
+
+			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+			<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+		</div>
+		<div class="mobile-nav">
+			<button href=".about"><img src="about_icon.jpg"><br>關於教會</button>
+			<button href=".worship"><img src="worship_icon.jpg"><br>主日崇拜</button>
+			<button href=".activities"><img src="activities_icon.jpg">活動花絮</button>
+			<button href=".sharing"><img src="sharing_icon.jpg">分享</button>
+			<button href=".contact"><img src="contact_icon.png">聯絡我們</button>
+		</div>
+	</div>
+	<div class="mobile-topnav" id="myLinks">
+		<ul>
+			<li><a href=".home">首頁</a>
+			<li><a href=".about">關於教會</a><ul>
+				<li><a href=".description">恩樂堂簡介</a>
+				<li><a href=".ourflow">我們的源流</a>
+				<li><a href=".ourfaith">我們的信仰</a>
+			</ul></li>
+			<li><a href=".worship">主日崇拜</a><ul>
+				<li><a href=".description">主日講道</a>	
+				<li><a href=".description">崇拜週刊</a>	
+			</ul></li>
+			<li><a href=".activities">活動花絮</a>
+			<li><a href=".sharing">分享</a><ul>
+				<li><a href=".description">見證分享</a>	
+				<li><a href=".description">文章分享</a>	
+				<li><a href=".description">書籍分享</a>	
+			</ul></li>
+			<li><a href=".contact">聯絡我們</a>
+		</ul>
+	</div>
+<br>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+     <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+        
+		function afterMenuIsClicked(x) {
+		  x.classList.toggle("change");
+		  var y = document.getElementById("myLinks");
+		  if (y.style.height === "1100px") {
+			y.style.height = "0px";
+		  } else {
+			y.style.height = "1100px";
+		  }
+		}
+		function afterPageLinkIsHovered(x) {
+		  $(".sublinks").css("height", "0px");
+		  $(x).next().css("height", "54px");
+		 
+		}
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+        
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+        
+        function showSlides(n) {
+          var i;
+          var slides = document.getElementsByClassName("mySlides");
+          var dots = document.getElementsByClassName("dot");
+          if (n > slides.length) {slideIndex = 1}    
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";  
+          }
+          for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";  
+        }
+    </script>  
+
+    </body>
+</html>

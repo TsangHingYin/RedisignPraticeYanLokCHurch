@@ -1,0 +1,165 @@
+body {  
+	margin: 0;
+	min-width:900px;
+	
+	font-family: DFKai-SB;
+}
+:root {
+	
+}
+a {
+	text-decoration: none;
+}
+
+.site-header {               
+	text-align: center;
+	margin: auto;
+}
+.site-header a {
+	color: rgb(89, 194, 37);
+	font-size: 35px;
+}
+.site-header a img{
+	height: 80px;
+}
+.head-container {
+		webkit-box-align: center;
+		overflow: hidden;
+		display: flex;
+		align-items: center;
+		background-color: rgb(241, 255, 150);
+		padding:25px;
+}
+
+/*features only use in desktop or laptop*/
+@media only screen and (min-device-width: 480px) {
+	
+	
+	.head-container a {
+		font-weight: 900;
+	}            
+	.site-topnav {
+		display: block;
+		margin: auto;
+		position: relative;
+	}
+	.mobile-nav {
+		display: none;
+	}
+	.mobile-topnav {
+		display: none;
+	}
+	.site-topnav ul{
+		list-style-type: " ";
+	}
+	.site-topnav li{
+		display:inline-block;
+	}
+	.site-topnav li ul{
+		position:absolute;
+		left: 0px;
+		bottom: -15px;
+		height:0px;
+		transition: height 0.5s;
+	}
+	
+	.site-topnav a {
+		float: left;
+		color: rgb(0, 0, 0);
+		text-align: center;
+		padding: 14px 16px;
+		font-size: 22px;
+	}
+	.site-topnav a:hover {
+		-ms-transform: rotate(15deg); /* IE 9 */
+		transform: rotate(15deg);
+	}
+	.site-topnav li ul a{
+		font-weight: 300;
+		font-size: 18px;
+	}
+	.menu-container {
+		display: none;
+	}
+
+	
+	body { overflow: hidden;}
+}
+
+@media only screen and (max-device-width: 480px) {
+	.mobile-nav {
+		display: grid;
+		grid-row-gap: 0px;
+		grid-column-gap: 0px;
+		grid-template-columns: auto auto;
+	}
+	.mobile-topnav {
+	  overflow: hidden;
+	  position: absolute;
+	  top:180px;
+	  width: 100%;
+	  
+	}
+
+	.mobile-topnav, #myLinks {
+	  height: 0px;
+	  background-color: rgb(241, 255, 150);
+	  transition: height 0.5s;
+	}
+
+	.mobile-topnav ul {
+	  list-style-type: " ";
+
+	}
+	.mobile-topnav a {
+	  color: black;
+	  padding: 14px 16px;
+	  text-decoration: none;
+	  display: block;
+	  font-size: 40px;
+	  font-weight: 600;
+	}
+	
+	.site-topnav {
+		display: none;
+	}
+	.site-header a {
+		font-size: 60px;
+		text-decoration: none;
+	}
+	.site-header a img{
+		height: 150px;
+	}
+	/*classes related to menu and menu items*/
+	.menu-container {
+	  display: inline-block;
+	  cursor: pointer;
+	}
+
+	.bar1, .bar2, .bar3 {
+	  width: 70px;
+	  height: 10px;
+	  background-color: #333;
+	  margin: 12px 20px;
+	  transition: 0.4s;
+	}
+
+	.change .bar1 {
+	  -webkit-transform: rotate(-45deg) translate(-8px, 30px);
+	  transform: rotate(-45deg) translate(-6px, 38px);
+	}
+
+	.change .bar2 {
+	  -webkit-transform: rotate(90deg);
+	  transform: rotate(90deg);}
+
+	.change .bar3 {
+	  -webkit-transform: rotate(45deg) translate(-22px, 2px);
+	  transform: rotate(45deg) translate(-25px, 8px);
+	}
+
+		
+	body {               
+	 background-color:rgb(251, 252, 182);
+	}
+}
